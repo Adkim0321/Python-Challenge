@@ -24,11 +24,11 @@ with open(csvpath, encoding='utf-8') as csvfile:
     profchange = [profit[i] - profit[i-1] for i in range(1,len(months))]
    
     #math to create average change
-    avgchg = (sum(profchange)/len(months))
+    avgchg = (sum(profchange)/(len(months)-1))
     
     #iterate with the difference and the month to get min max
     minmax = [(profit[i] - profit[i-1], months[i]) for i in range(1,len(months))]
-    print(minmax)
+    
     #math to create average change
     maxminmax = max(minmax)
     minminmax = min(minmax)

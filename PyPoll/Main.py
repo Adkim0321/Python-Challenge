@@ -1,36 +1,43 @@
-# import os
-# import csv
+import os
+import csv
 
-# csvpath = os.path.join('Resource', 'election_data.csv')
+csvpath = os.path.join('Resource', 'election_data.csv')
 
-# with open(csvpath, encoding='utf-8') as csvfile:
-#     csvreader = csv.reader(csvfile, delimiter=",")
+with open(csvpath, encoding='utf-8') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
 
-#    # Skip the header
-#     next(csvreader)
-#     csvdata= list(csvreader)
+   # Skip the header
+    next(csvreader)
+    csvdata= list(csvreader)
 
-# #data is headered as voteid county candidate
-# # The total number of votes cast, grab fist column and len column
-#     votes = [row[0] for row in csvdata]
-#     totalvotes = (len(votes))  
-#     print(totalvotes)
-#     # vote = []
-#     # for row in csvdata:
-#     #     votes = row[0]
-#     #     vote.append(row[0])
-#     # print(len(vote))
-# # A complete list of candidates who received votes: loop candiates and summate total:put in list
-#     candidates = [row[2] for row in csvdata]
-#     list_candidates = []
-#     [list_candidates.append(i) for i in candidates if i not in list_candidates]
-#     print(list_candidates)
+#data is headered as voteid county candidate
+# The total number of votes cast, grab fist column and len column
+    votes = [row[0] for row in csvdata]
+    totalvotes = (len(votes))  
+    print(totalvotes)
+    # vote = []
+    # for row in csvdata:
+    #     votes = row[0]
+    #     vote.append(row[0])
+    # print(len(vote))
+# A complete list of candidates who received votes: loop candiates and summate total:put in list
+    candidates = [row[2] for row in csvdata]
+    # i need the name of the candidates and the respective total vote count of the candidates
+    #candidate 1 votes x
+    #candidate 2 votes y
+    
+    dict_candidates = {}
 
-#     print(len(list_candidates))
+    for i in candidates:
+        dict_candidates[i] = dict_candidates.get(i,0) + 1
+
+    print(dict_candidates)
 
 
-# # Python program to count the frequency of
-# # elements in a list using a dictionary
+
+
+# Python program to count the frequency of
+# elements in a list using a dictionary
 
 # import os
 # import csv
